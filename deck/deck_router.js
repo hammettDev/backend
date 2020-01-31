@@ -49,7 +49,7 @@ router.post('/deck/:id', (req, res) => {
 								// notes: fav.notes,
 							};
 						});
-						res.status(201).json({ decks: userDecks });
+						res.status(201).json({ deck: userDecks });
 					});
 				})
 				.catch(err => {
