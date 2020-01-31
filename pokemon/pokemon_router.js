@@ -3,7 +3,7 @@ const router = require('express').Router();
 
 router.get('/allpokemon', (req, res) => {
 	pokemon.card
-		.where({ setCode: 'base1', types: 'grass' })
+		.where({ setCode: 'base1' })
 		.then(pokemon => {
 			// console.log(pokemon);
 			res.status(200).json(pokemon);
