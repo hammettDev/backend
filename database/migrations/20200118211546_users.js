@@ -8,9 +8,9 @@ exports.up = function(knex) {
 				.unique();
 			table.string('password', 255).notNullable();
 		})
-		.createTable('decks', table => {
+		.createTable('deck', table => {
 			table.increments(); // id
-			table.string('decks');
+			table.string('cards');
 			table
 				.integer('userId') // foreign key
 				.references('id')

@@ -4,7 +4,7 @@ module.exports = {
 	findUserBy,
 	findUserDecks,
 	findDecksBy,
-	addDeck,
+	addToDeck,
 };
 
 function findUserBy(id) {
@@ -17,13 +17,16 @@ function findUserBy(id) {
 }
 
 function findUserDecks(id) {
-	return db('decks').where('userId', id);
+	return db('deck').where('userId', id);
 }
 
 function findDecksBy(id) {
-	return db('decks').where({ id });
+	return db('deck').where({ id });
 }
 
-function addDeck(deck) {
-	return db('decks').insert(deck);
+function addToDeck(card) {
+	return db('deck')
+		.join('users')
+		.where({ userId: card })
+		.insert();
 }

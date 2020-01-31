@@ -15,7 +15,7 @@ server.use(express.json());
 
 server.use('/api/auth', auth_router);
 server.use('/api/pokemon', authenticate, pokemon_router);
-server.use('/api/decks', authenticate, deck_router);
+server.use('/api/deck', authenticate, deck_router);
 
 server.get('/', (req, res) => {
 	res.send('hi from server');
