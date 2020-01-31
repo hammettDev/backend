@@ -15,7 +15,7 @@ exports.up = function(knex) {
 				.integer('userId') // foreign key
 				.references('id')
 				.inTable('users')
-				.notNullable(); // deck cannot exist without a user
+				.notNullable() // deck cannot exist without a user
 				.onUpdate('CASCADE')
 				.onDelete('CASCADE');
 		});
