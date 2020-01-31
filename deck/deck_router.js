@@ -63,17 +63,17 @@ router.get('/deck/:id', (req, res) => {
 // 		});
 // });
 
-router.post('/deck/:id', (req, res) => {
-	card = req.body;
-	Decks.addToDeck(card)
-		.then(newlyAddedCard => {
-			console.log(newlyAddedCard);
-			res.status(201).json(card);
-		})
-		.catch(err => {
-			console.log(err);
-			res.status(500).json({ message: 'Failed to add card to server' });
-		});
-});
+// router.post('/deck/:id', (req, res) => {
+// 	card = req.body;
+// 	Decks.addToDeck(card)
+// 		.then(newlyAddedCard => {
+// 			console.log(newlyAddedCard);
+// 			res.status(201).json(card);
+// 		})
+// 		.catch(err => {
+// 			console.log(err);
+// 			res.status(500).json({ message: 'Failed to add card to server' });
+// 		});
+// });
 
 module.exports = router;

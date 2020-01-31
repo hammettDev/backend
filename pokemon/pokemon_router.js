@@ -6,7 +6,7 @@ router.get('/allpokemon', async (req, res) => {
 		.where({ setCode: 'base1' })
 		.then(pokemon => {
 			// // console.log(pokemon);
-			// res.status(200).json(pokemon);
+			res.status(200).json(pokemon);
 		})
 		.catch(error => {
 			console.log(error);
