@@ -24,9 +24,13 @@ function findDecksBy(id) {
 	return db('deck').where({ id });
 }
 
+// function addToDeck(card) {
+// 	return db('deck')
+// 		.join('users')
+// 		.where({ userId: card })
+// 		.insert();
+// }
+
 function addToDeck(card) {
-	return db('deck')
-		.join('users')
-		.where({ userId: card })
-		.insert();
+	return db('deck').insert(card);
 }
