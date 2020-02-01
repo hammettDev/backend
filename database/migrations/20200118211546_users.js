@@ -10,7 +10,7 @@ exports.up = function(knex) {
 		})
 		.createTable('deck', table => {
 			table.increments(); // id
-			table.string('cards');
+			table.json('cards');
 			table
 				.integer('userId') // foreign key
 				.references('id')
